@@ -64,7 +64,7 @@ const endpoints: AuthServerAPI[] = [
     {
         name: "validate session",
         method: "GET",
-        address: "/validate",
+        address: "/auth",
         request: {
             user_agent: "string",
             ip: "^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)",
@@ -92,7 +92,7 @@ const endpoints: AuthServerAPI[] = [
     {
         name: "postpone session",
         method: "PUT",
-        address: "/postpone",
+        address: "/auth",
         request: {
             user_agent: "string",
             ip: "^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)",
@@ -120,7 +120,7 @@ const endpoints: AuthServerAPI[] = [
     {
         name: "logOut",
         method: "DELETE",
-        address: "/logout",
+        address: "/auth",
         request: {
             user_agent: "string",
             ip: "^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)",
