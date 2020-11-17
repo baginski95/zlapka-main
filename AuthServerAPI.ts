@@ -11,6 +11,38 @@ interface AuthServerAPIRequest {
     credentials?: object;
 }
 
+interface SessionCertificate {
+    session_id: string;
+    session_key: string;
+    user_category: Role;
+    user_score: bigint;
+    user_agent: string;
+    ip: "^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)";
+    mac: "^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$";
+    session_start: "int timestamp millis";
+    session_expire: "int timestamp millis";
+    location: {
+        ns: "^(-?\\d{1,2}\\.\\d{6})",
+        ew: "^(-?\\d{1,2}\\.\\d{6})",
+    };
+    organization_roles: OrganizationRole[];
+    special_permissions: string[];
+    special_limitations: string[];
+    ca_signed_hash: string;
+}
+
+interface OrganizationRole {
+    org_name: "String";
+    org_role: Role;
+}
+
+enum Role {
+    FOUNDER,
+    ADMIN,
+    MODERATOR,
+    CONTRIBUTOR,
+    PARTICIPANT,
+}
 
 interface geoTag {
     ns: string;
@@ -28,7 +60,7 @@ interface AuthServerAPI {
     name: string;
     method: "POST"|"GET"|"PUT"|"DELETE";
     address: string;
-    request: AuthServerAPIRequest
+    request: AuthServerAPIRequest;
     response: AuthServerAPIResponse;
 }
 
@@ -47,7 +79,7 @@ const endpoints: AuthServerAPI[] = [
             },
             credentials: {
                 login: "string",
-                passwordHash: "string",
+                password: "string",
             }
         },
         response: {
@@ -57,35 +89,7 @@ const endpoints: AuthServerAPI[] = [
             },
             data: {
                 status_code: "int",
-                session_token: "string",
-            },
-        },
-    },
-    {
-        name: "validate session",
-        method: "GET",
-        address: "/auth",
-        request: {
-            user_agent: "string",
-            ip: "^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)",
-            mac: "^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$",
-            location: {
-                ns: "^(-?\\d{1,2}\\.\\d{6})",
-                ew: "^(-?\\d{1,2}\\.\\d{6})",
-            },
-            credentials: {
-                session_token: "string",
-            },
-        },
-        response:{
-            meta: {
-                meta: {
-                    server_time: "int timestamp millis",
-                    expire_time: "int timestamp millis",
-                },
-                data: {
-                    status_code: "int",
-                },
+                session_certificate: "SessionCertificate",
             },
         },
     },
@@ -102,7 +106,7 @@ const endpoints: AuthServerAPI[] = [
                 ew: "^(-?\\d{1,2}\\.\\d{6})",
             },
             credentials: {
-                session_token: "string",
+                session_certificate: "SessionCertificate",
             },
         },
         response:{
@@ -130,7 +134,7 @@ const endpoints: AuthServerAPI[] = [
                 ew: "^(-?\\d{1,2}\\.\\d{6})",
             },
             credentials: {
-                session_token: "string",
+                session_certificate: "SessionCertificate",
             },
         },
         response: {
