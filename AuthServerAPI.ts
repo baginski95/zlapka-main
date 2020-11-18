@@ -53,7 +53,7 @@ enum StatusCode {
     AUTHERROR = 0,
     SESSIONOK= 1,
     INCONSISTENTDATA = 2,
-    LOGOUTOK=3,
+    LOGOUTOK= 3,
 }
 
 interface AuthServerAPI {
@@ -117,6 +117,7 @@ const endpoints: AuthServerAPI[] = [
                 },
                 data: {
                     status_code: "int",
+                    session_certificate: "SessionCertificate",
                 },
             },
         },
