@@ -11,7 +11,7 @@ interface AuthServerAPIRequest {
     credentials?: object;
 }
 
-interface SessionCertificate {
+export interface SessionCertificate {
     session_id: string;
     session_key: string;
     user_category: Role;
@@ -31,12 +31,12 @@ interface SessionCertificate {
     ca_signed_hash: string;
 }
 
-interface OrganizationRole {
+export interface OrganizationRole {
     org_name: "String";
     org_role: Role;
 }
 
-enum Role {
+export enum Role {
     FOUNDER,
     ADMIN,
     MODERATOR,
