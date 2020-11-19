@@ -21,7 +21,6 @@ interface UserServerApi {
 }
 
 interface UserData {
-    user_id: bigint;  // Do we need it in our requests? ev. hash it!
     user_name: string;
     first_name: string;
     last_name: string;
@@ -38,45 +37,21 @@ interface UserData {
      */
 }
 
-interface UserGroups {
-    group_id: bigint;
-    name: string;
-    public: boolean;
-    threads: GroupThread[];
-}
-
-interface GroupThread {
-    thread_id: bigint;
-    group_id: bigint;
-    user_id: bigint; // Maybe using username is better, and then Apis will map username to user_id
-    title: string;
-    content: string; // conent may have string or path to content(for example: path to photo)
-    photo: string;
-    comments: Comment[];
-}
-
-interface Comment {
-    comment_id: bigint;
-    content: string;
-    user_id: bigint;
-    thread_id: bigint; // Is it neccessery? cause comment belongs to any GroupThread which already has filed with it
-}
-
-interface UserVoucher {
+interface UserVoucher { //!!! Re-think about it !!!!
     voucher_id: bigint;
-    user_id: bigint;
+    user_name: string;
     type: VoucherType;
     value: bigint;
 }
 
-enum VoucherType {
+enum VoucherType { // Focus on it later
     DISCOUNT,
-    FOR_FREE, // What else guys?
+    FOR_FREE,
 }
 
-interface UserPreference {
+interface UserPreference { // ???????????
     preference_id: bigint;
-    user_id: bigint;
+    user_name: string;
     name: string;
 }
 
@@ -86,28 +61,27 @@ interface Preference {      // ??????
 }
 
 interface UserOrganization {
-    user_id: bigint;
-    organization_id: bigint;
+    user_name: string;
+    organization_name: string;
     role: Role;
 }
 
 interface organization {
-    organization_id: bigint;
-    name: string;
+    organization_name: string;
     phone_number: bigint;
     email: string;
     score: bigint;
     advertisements: advertisement[]; // We need to think about it.
 }
 
-interface advertisement {
+interface advertisement { // ??????
     advertisement_id: bigint;
     information: string;
     targets: target[];
     picture: string;
 }
 
-interface target {
+interface target { // ?????
     target_id: number;
     geo_tag: geoTag;
     distance: bigint;
@@ -122,7 +96,7 @@ const endpoints: UserServerApi[] = [
     {
         name: "get_user_info",
         method: "GET",
-        address: "/user/{user_id}",
+        address: "/user/{user_name}",
         request: {
             credentials: "SessionCertificate",
             user_data: null,
@@ -141,7 +115,7 @@ const endpoints: UserServerApi[] = [
     {
         name: "post_user_info",
         method: "POST",
-        address: "/user/{id}",
+        address: "/user/{user_name}",
         request: {
             credentials: "SessionCertificate",
             user_data: UserData,
