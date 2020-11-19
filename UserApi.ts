@@ -29,7 +29,7 @@ interface UserData {
     email: string;
     phone_number: bigint; //where do we need it ?
     age: bigint;
-    score: bigint; // Should I insert here lists of user_relations, user_preference, etc.?
+    score: bigint;
     role: Role;
     /*
     preferences: UserPreference[]; itp. itd.
@@ -94,7 +94,7 @@ interface target { // ?????
 
 const endpoints: UserServerApi[] = [
     {
-        name: "get_user_info",
+        name: "get_all_user_info",
         method: "GET",
         address: "/user/{user_name}",
         request: {
@@ -113,6 +113,33 @@ const endpoints: UserServerApi[] = [
 
     },
     {
+        name: "get_some_user_info",
+        method: "GET",
+        address: "/user/{user_name}/",
+        request: {
+            credentials: "SessionCertificate",
+            user_data: {
+                user_name: "string", // Those are fields from UserData interface
+                first_name: "string",
+                last_name: "string",
+                description: "string",
+                photo: "string",
+                age: "bigint",
+                score: "bigint",
+            }
+        },
+        response: {
+            meta: {
+                server_time: "int timestamp millis",
+            },
+            data: {
+                status_code: "int",
+            },
+        },
+
+
+    },
+    {
         name: "post_user_info",
         method: "POST",
         address: "/user/{user_name}",
@@ -128,6 +155,42 @@ const endpoints: UserServerApi[] = [
                 status_code: "int",
             },
         }
+    },
+    {
+        name: "put_user_info",
+        method: "PUT",
+        address: "/user/{user_name}",
+        request: {
+            credentials: "SessionCertificate",
+            user_data: UserData,// Should user change any field, if YES then we need to verify him in some cases
+        },
+        response: {
+            meta: {
+                server_time: "int timestamp millis",
+            },
+            data: {
+                status_code: "int",
+            },
+        },
 
-    }
+    },
+    {
+        name: "delete_user_info",
+        method: "DELETE",
+        address: "/user/{user_name}",
+        request: {
+            credentials: "SessionCertificate",
+            user_data: UserData, // What we can delete??
+        },
+        response: {
+            meta: {
+                server_time: "int timestamp millis",
+            },
+            data: {
+                status_code: "int",
+            },
+        },
+
+
+    },
 ]
