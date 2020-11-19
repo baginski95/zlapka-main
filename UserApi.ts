@@ -4,7 +4,7 @@ import { EventData } from "./EventApi";
 
 interface UserApiRequest {
     credentials: string;
-    user_data?: object;
+    data?: object;
 }
 
 interface UserApiResponse {
@@ -99,7 +99,7 @@ const endpoints: UserServerApi[] = [
         address: "/user/{user_name}",
         request: {
             credentials: "SessionCertificate",
-            user_data: null,
+            data: null,
         },
         response: {
             meta: {
@@ -118,15 +118,7 @@ const endpoints: UserServerApi[] = [
         address: "/user/{user_name}/",
         request: {
             credentials: "SessionCertificate",
-            user_data: {
-                user_name: "string", // Those are fields from UserData interface
-                first_name: "string",
-                last_name: "string",
-                description: "string",
-                photo: "string",
-                age: "bigint",
-                score: "bigint",
-            }
+            data: null,
         },
         response: {
             meta: {
@@ -134,6 +126,34 @@ const endpoints: UserServerApi[] = [
             },
             data: {
                 status_code: "int",
+                user_data: {
+                    user_name: "string", // Those fields are  from UserData interface
+                    first_name: "string",
+                    last_name: "string",
+                    description: "string",
+                    photo: "string",
+                    age: "bigint",
+                    score: "bigint",
+                }
+            },
+        },
+
+
+    }, {
+        name: "get_some_event_participants_info",
+        method: "GET",
+        address: "/event/{event_id}/participants_info",
+        request: {
+            credentials: "SessionCertificate",
+            data: null,
+        },
+        response: {
+            meta: {
+                server_time: "int timestamp millis",
+            },
+            data: {
+                status_code: "int",
+                data: "Array < UserData >", 
             },
         },
 
@@ -145,7 +165,7 @@ const endpoints: UserServerApi[] = [
         address: "/user/{user_name}",
         request: {
             credentials: "SessionCertificate",
-            user_data: UserData,
+            data: UserData,
         },
         response: {
             meta: {
@@ -162,7 +182,7 @@ const endpoints: UserServerApi[] = [
         address: "/user/{user_name}",
         request: {
             credentials: "SessionCertificate",
-            user_data: UserData,// Should user change any field, if YES then we need to verify him in some cases
+            data: UserData,// Should user change any field, if YES then we need to verify him in some cases
         },
         response: {
             meta: {
@@ -180,7 +200,7 @@ const endpoints: UserServerApi[] = [
         address: "/user/{user_name}",
         request: {
             credentials: "SessionCertificate",
-            user_data: UserData, // What we can delete??
+            data: UserData, // What we can delete??
         },
         response: {
             meta: {
