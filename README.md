@@ -30,6 +30,7 @@
         -chat relay component (menaging secure end to end encrypted p2p communication beetween users)
         -admin panel (menaging admin actions, fully independent from other components)
         -mod panel (menaging moderator actions, fully independent from other comopnents)
+        -front end (decision postponed, in this architecture we are able to deliver multiple front-end interfaces)
         
 # zlapka-main
     Component diagram:
