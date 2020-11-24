@@ -5,7 +5,7 @@
     Front-end: we are waiting for you <3
 
 # key-words
-    microservice architecture, social media, geo-tagging
+    microservice architecture, social media, geo-tagging, privacy, quality content
 
 # about project
     Zlapka is final project in our one year bootcamp - Codecool - curiculum. This time we are challenging ouerselves
