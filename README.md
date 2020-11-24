@@ -17,14 +17,25 @@
     - interchangeability
 
 # component repositories:
-    Database (needs update - sheduled for 23 XI sprint) [python, plpgsql, pgsql]:
+    Database (menages shared database, needs update - sheduled for 23 XI sprint) [python, plpgsql, pgsql]:
         github.com/pirat77/zlapka_db
-    Event component [JAVA EE, Spring]:
+    Event component (just component structure would be extended in first december sprint) [JAVA EE, Spring]:
         github.com/pirat77/ZlapkaEventComponent
-
+    Other components (to be created):
+        -auth server (menaging permissions and user verification)
+        -user component (menaging user data)
+        -scoring component (menaging scoring algorithm meant for maximalization of content quality)
+        -ephemeral component (menaging events outside of planet earth scope)
+        -group boards component (menaging message boards)
+        -chat relay component (menaging secure end to end encrypted p2p communication beetween users)
+        -admin panel (menaging admin actions, fully independent from other components)
+        -mod panel (menaging moderator actions, fully independent from other comopnents)
+        
 # zlapka-main
     Component diagram:
 ![ZlapkaComponentDiagram.png](/media/ZlapkaComponentDiagram.png)
 # authentication
     authentication protocol:
 ![authentication.png](/media/authentication.png)
+
+# whose for? 
