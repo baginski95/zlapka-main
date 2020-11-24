@@ -16,6 +16,12 @@
     - modularity
     - interchangeability
 
+# component repositories:
+    Database (needs update - sheduled for 23 XI sprint) [python, plpgsql, pgsql]:
+        github.com/pirat77/zlapka_db
+    Event component [JAVA EE, Spring]:
+        github.com/pirat77/ZlapkaEventComponent
+
 # zlapka-main
     Component diagram:
 ![ZlapkaComponentDiagram.png](/media/ZlapkaComponentDiagram.png)
