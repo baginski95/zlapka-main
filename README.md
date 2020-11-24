@@ -5,7 +5,7 @@
     Front-end: we are waiting for you <3
 
 # key-words
-    microservice architecture, social media, geo-tagging, privacy, quality content
+    microservice architecture, social media, geo-tagging, privacy, quality content, local events
 
 # technologies
     JAVA, Spring, C#, .NET, PGSQL, PLPGSQL, PYTHON, TYPE SCRIPT, JSF, SMALL-STEP, OMEMO, CENTOS, BASH, LUCID CHART
