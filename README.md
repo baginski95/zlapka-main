@@ -27,6 +27,7 @@
     Other components (to be created):
         -auth server (menaging permissions and user verification)
         -user component (menaging user data)
+        -localization component (menaging venues)
         -scoring component (menaging scoring algorithm meant for maximalization of content quality)
         -ephemeral component (menaging events outside of planet earth scope)
         -group boards component (menaging message boards)
@@ -43,3 +44,18 @@
 ![authentication.png](/media/authentication.png)
 
 # whose for? 
+    Zlapka aims to deliver efficient tool for local area networking. Our main area of interest are middle size events
+    ( 10-100 participants ), held in neighbourhood environment. Who is our target user? It could by anyone :) eg.:
+    - local owners
+    - event organizers
+    - self promoting artist
+    - trendsetters / influncers
+    - people looking for casual events in their spare time
+    - people looking for mates with similiar interest
+    - people who are just bored
+    - people looking for part time job
+    - people having strange hobby
+    - animators
+    - sport event organizers (also extreme sports crews)
+    - local governments (menaging cultural events)
+    - families looking for interesting activities
