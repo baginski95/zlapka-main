@@ -36,11 +36,11 @@
         -mod panel (menaging moderator actions, fully independent from other comopnents)
         -front end (decision postponed, in this architecture we are able to deliver multiple front-end interfaces)
         
-# zlapka-main
+# zlapka-main architecture
     Component diagram:
 ![ZlapkaComponentDiagram.png](/media/ZlapkaComponentDiagram.png)
 # authentication
-    authentication protocol:
+    authentication protocol use case example:
 ![authentication.png](/media/authentication.png)
 
 # whose for? 
@@ -59,3 +59,22 @@
     - sport event organizers (also extreme sports crews)
     - local governments (menaging cultural events)
     - families looking for interesting activities
+    
+# ROADMAP:
+    [SPRINT NUMBER]     [TIME]              [TASKS]
+    0                                       we created database and some component shells in previous projects
+    1                   8 - 21 XI 2020      dreaming stage, artifacts setup, interface separation, responsibility claim
+    2                   23 XI - 5 XII 2020  documentation, data base update, view definition, tdd test preparation
+    3                   6 - 20 XII 2020     event component, user component, google maps integration
+    
+    2021:
+    
+    4                                       Scoring, ephemeral events
+    5                                       groups, boards, chat
+    6                                       admin panel, mod panel, log repository
+    7                                       secuirity testing
+    8                                       front end
+    
+    Xx                                      test, measure, plan, update feedback loop
+    
+    Sprng - early summer 2021:              Release
