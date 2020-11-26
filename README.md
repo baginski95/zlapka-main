@@ -8,7 +8,7 @@
     microservice architecture, social media, geo-tagging, privacy, quality content, local events
 
 # technologies
-    JAVA, Spring, C#, .NET, PGSQL, PLPGSQL, PYTHON, TYPE SCRIPT, JSF, SMALL-STEP, OMEMO, CENTOS, BASH, LUCID CHART
+    JAVA, Spring, C#, .NET, DOCKER, PGSQL, PLPGSQL, PYTHON, TYPE SCRIPT, JSF, SMALL-STEP, OMEMO, CENTOS, BASH, LUCID CHART
 
 # about project
     Zlapka is final project in our one year bootcamp - Codecool - curiculum. This time we are challenging ouerselves
