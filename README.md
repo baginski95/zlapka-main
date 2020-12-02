@@ -24,10 +24,14 @@
         github.com/pirat77/zlapka_db
     Event component (just component structure would be extended in first december sprint) [JAVA EE, Spring]:
         github.com/pirat77/ZlapkaEventComponent
+    Localization component (menaging venues) [Java EE, Spring]:
+        https://github.com/Grelory/ZlapkaLocalizationComponent
+    User component[c#, .NET Core]:
+	https://github.com/baginski95/zlapka-user-API
+	
     Other components (to be created):
         -auth server (menaging permissions and user verification)
         -user component (menaging user data)
-        -localization component (menaging venues)
         -scoring component (menaging scoring algorithm meant for maximalization of content quality)
         -ephemeral component (menaging events outside of planet earth scope)
         -group boards component (menaging message boards)
