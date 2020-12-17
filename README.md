@@ -73,9 +73,9 @@
     
     2021:
     
-    4                                       Scoring, ephemeral events
-    5                                       groups, boards, chat
-    6                                       admin panel, mod panel, log repository
+    4                                       Scoring, organization, log repository
+    5                                       groups, boards, chat, ephemeral events
+    6                                       admin panel, mod panel
     7                                       secuirity testing
     8                                       front end
     
