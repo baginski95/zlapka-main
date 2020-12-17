@@ -27,7 +27,7 @@
     Localization component (menaging venues) [Java EE, Spring]:
         https://github.com/Grelory/ZlapkaLocalizationComponent
     User component[c#, .NET Core]:
-	https://github.com/baginski95/zlapka-user-API2
+	https://github.com/baginski95/zlapka-user-API
 	
     Other components (to be created):
         -auth server (menaging permissions and user verification)
@@ -73,9 +73,9 @@
     
     2021:
     
-    4                                       Scoring, organization, log repository
-    5                                       groups, boards, chat, ephemeral events
-    6                                       admin panel, mod panel
+    4                                       Scoring, ephemeral events
+    5                                       groups, boards, chat
+    6                                       admin panel, mod panel, log repository
     7                                       secuirity testing
     8                                       front end
     
